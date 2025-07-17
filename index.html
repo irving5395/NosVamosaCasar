@@ -2,86 +2,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Irvin & America - ¡Nos Vamos a Casar!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Playfair Display', serif; margin: 0; padding: 0; background: #fefaf5; color: #4a2e2b; }	
-    header { background: #a35229; color: white; padding: 2rem; text-align: center; }
+    body { font-family: 'Playfair Display', serif; margin: 0; padding: 0; }
+    header { background: #a35229; color: white; padding: 2rem; position: relative; text-align: center; }
+    .language-switch { position: absolute; top: 1rem; right: 1rem; }
     section { padding: 2rem; max-width: 800px; margin: auto; }
-    h1, h2 { margin-bottom: 0.5rem; }
-    .rsvp-form { display: flex; flex-direction: column; }
-    .rsvp-form input, .rsvp-form textarea { margin-bottom: 1rem; padding: 0.5rem; font-size: 1rem; }
-    .rsvp-form button { background: #a35229; color: white; padding: 0.75rem; border: none; cursor: pointer; }
-    footer { background: #eee; text-align: center; padding: 1rem; font-size: 0.9rem; }
+    .cena-hora { background-color: #fdf0e7; border-left: 6px solid #a35229; padding: 1rem; border-radius: .75rem; margin-top: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    .cena-hora h3 { margin-top: 0; color: #a35229; font-size: 1.5rem; }
+    footer { background: #eee; text-align: center; padding: 1rem; font-size: .9rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Irvin & America</h1>
-    <p>¡Nos Vamos a Casar!</p>
-    <p>09 de agosto del 2025 · 11:00 AM · Indianapolis, IN</p>
+    <div class="language-switch">
+      <button onclick="changeLanguage('es')">ES</button> |
+      <button onclick="changeLanguage('en')">EN</button>
+    </div>
+    <h1 id="title">Irvin & America</h1>
+    <p id="subtitle">¡Nos Vamos a Casar!</p>
+    <p id="date-location">09 de agosto del 2025 · 11:00 AM · Indianapolis, IN</p>
   </header>
-  
-<section id="nuestra-historia">
-  <h2>Nuestra Historia</h2>
-  <p>
-    Nuestra historia comenzó hace ya 14 años, en una fábrica donde ella entró a trabajar con una sonrisa enorme de cachete a cachete y un brillo en los ojos como el de una estrella.
-  </p>
-  <p>
-    Fue ahí donde ella empezó a hablarme… y a tratar de conquistarme —¡lo logró! 😄 Desde ese momento, supe que ella iba a ser mi esposa.
-  </p>
-  <p>
-    Un año después, nos casamos por lo civil, y hoy, después de tantos recuerdos, aprendizajes y bendiciones, estamos listos para unir nuestras vidas delante de Dios.
-  </p>
-  <p>
-    Damos gracias a Él por habernos guiado hasta aquí, y le pedimos que siga bendiciendo nuestra familia y nuestro amor.
-  </p>
-</section>
-  
-  <section id="itinerario">
-    <h2>Itinerario</h2>
-    <p><strong>Ceremonia:</strong> Holy Spirit Catholic Church<br>
-    7243 E 10th St, Indianapolis, IN 46229</p>
-    <p><strong>Recepción:</strong> Despues de la ceremonia, 
-      queremos seguir compartiendo la alegria de este dia
-      tan especial con ustedes. Les invitamos a una hermosa velada
-      con cena, musica y baile, rodeados del cariño de nuestros seres queridos.</p>
-    <p><strong>Lugar</strong> Blue Moon Events<br>
-    10202 E Washington St Ste.790, Indianapolis, IN 46229<br>
-      <p><strong>Hora</strong> 5:00 PM</p>
-    Sera un honor contar con su presencia
-    para celebrar juntos este nuevo comienzo</p>
+
+  <section id="itinerary-section">
+    <h2 id="itinerary-title">Itinerario del Gran Día</h2>
+
+    <p id="ceremony">11:00 AM — Ceremonia Religiosa<br>
+       📍 Holy Spirit Catholic Church, 7243 E 10th St, Indianapolis, IN 46219</p>
+
+    <p id="photos">1:00 PM — Sesión de Fotos de los Recién Casados</p>
+
+    <p id="arrival">5:00 PM — Llegada de Invitados al Salón<br>
+       📍 Blue Moon Events, 10202 E Washington St Ste. 790, Indianapolis, IN 46229<br>
+       • Cóctel de bienvenida (Margaritas, Cerveza Modelo, refrescos)<br>
+       • Bocadillos: taquitos fritos de pollo, sopes de asada y chorizo, empanadas, “sopa de la abuela Gustavo”, ceviche de pescado y camarones, mini-tostadas<br>
+       • Asignación de mesas</p>
+
+    <p id="entrance">6:00 PM — Entrada Triunfal de los Novios<br>
+       🎶 Éntrada con: Edén Muñoz – “Como Quieres Quiero”; Julión Álvarez – “Regalo de Dios”</p>
+
+    <p id="toast-title"><strong>6:15 PM — Brindis por los Novios</strong></p>
+    <div id="toast-text">
+      Buenas tardes a todos.<br><br>
+      Primero que nada, queremos darles las gracias por estar aquí acompañándonos en uno de los días más importantes de nuestras vidas. Hoy celebramos el amor, la paciencia, los sueños compartidos y la decisión de caminar juntos por siempre.<br><br>
+      Este brindis no es solo por el día de hoy, sino por todos los días que vendrán: por las risas, los retos, las metas y los momentos simples que hacen que valga la pena el matrimonio.<br><br>
+      Gracias a nuestras familias por su apoyo, a nuestros amigos por su cariño, y a todos por hacernos sentir tan bendecidos.<br><br>
+      ¡Levantemos nuestras copas por el amor, por la unión, y porque esta historia que comenzó hace años siga creciendo con la bendición de Dios!<br><br>
+      ¡Salud! 🥂
+    </div>
+
+    <p id="mariachi">6:30 PM — Presentación del Mariachi durante la cena</p>
+
+    <p id="dinner">7:30 PM — Cena Formal</p>
+    <div class="cena-hora">
+      <h3 id="dinner-time-title">Hora de la Cena</h3>
+      <p id="dinner-time-text">La cena será servida a las <strong>7:30 PM</strong>, seguida de música y baile.</p>
+    </div>
+
   </section>
 
-  <section id="rsvp">
-    <h2>Confirma tu Asistencia</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfswJzGMetXQs1LwP3KFpz4j1mq8XuxB6jztapPT1CGsrEHCw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
+  <footer id="footer">© 2025 Irvin & America</footer>
 
-  <section id="regalos">
-    <h2>Regalos</h2>
-    <p>Tu presencia es nuestro mayor regalo. Pero si deseas contribuir, puedes hacerlo con un regalo en efectivo el día del evento.</p>
-  </section>
+  <script>
+    const translations = {
+      en: {
+        title: "Irvin & America",
+        subtitle: "We're Getting Married!",
+        date-location: "August 9, 2025 · 11:00 AM · Indianapolis, IN",
+        itinerary-title: "The Big Day Itinerary",
+        ceremony: "11:00 AM — Religious Ceremony\n📍 Holy Spirit Catholic Church, 7243 E 10th St, Indianapolis, IN 46219",
+        photos: "1:00 PM — Newlywed Photo Session",
+        arrival: "5:00 PM — Guest Arrival at Venue\n📍 Blue Moon Events, 10202 E Washington St Ste. 790, Indianapolis, IN 46229\n• Welcome cocktail (Strawberry/Lime Margaritas, Modelo Beer, Soft drinks)\n• Appetizers: chicken taquitos, asada & chorizo sopes, empanadas, “Grandma Gustavo’s soup”, fish & shrimp ceviche, mini-tostadas\n• Seating assignment",
+        entrance: "6:00 PM — Grand Entrance of the Couple\n🎶 Music: Edén Muñoz – “Como Quieres Quiero”; Julión Álvarez – “Regalo de Dios”",
+        'toast-title': "6:15 PM — Toast to the Couple",
+        'toast-text': "Good evening everyone.\n\nFirst of all, we want to thank you for being here celebrating one of the most important days of our lives... [continue toast in English]",
+        mariachi: "6:30 PM — Mariachi performance during dinner",
+        dinner: "7:30 PM — Formal Dinner",
+        'dinner-time-title': "Dinner Time",
+        'dinner-time-text': "Dinner will be served at <strong>7:30 PM</strong>, followed by music and dancing.",
+        footer: "© 2025 Irvin & America"
+      },
+      es: {
+        title: "Irvin & America",
+        subtitle: "¡Nos Vamos a Casar!",
+        'date-location': "09 de agosto del 2025 · 11:00 AM · Indianapolis, IN",
+        'itinerary-title': "Itinerario del Gran Día",
+        ceremony: "11:00 AM — Ceremonia Religiosa\n📍 Holy Spirit Catholic Church, 7243 E 10th St, Indianapolis, IN 46219",
+        photos: "1:00 PM — Sesión de Fotos de los Recién Casados",
+        arrival: "5:00 PM — Llegada de Invitados al Salón\n📍 Blue Moon Events, 10202 E Washington St Ste. 790, Indianapolis, IN 46229\n• Cóctel de bienvenida (Margaritas, Cerveza Modelo, refrescos)\n• Bocadillos: taquitos fritos de pollo, sopes de asada y chorizo, empanadas, “sopa de la abuela Gustavo”, ceviche de pescado y camarones, mini‑tostadas\n• Asignación de mesas",
+        entrance: "6:00 PM — Entrada Triunfal de los Novios\n🎶 Entrada con: Edén Muñoz – “Como Quieres Quiero”; Julión Álvarez – “Regalo de Dios”",
+        'toast-title': "6:15 PM — Brindis por los Novios",
+        'toast-text': "Buenas tardes a todos.\n\nPrimero que nada, queremos darles las gracias por estar aquí acompañándonos en uno de los días más importantes de nuestras vidas... ¡Salud! 🥂",
+        mariachi: "6:30 PM — Presentación del Mariachi durante la cena",
+        dinner: "7:30 PM — Cena Formal",
+        'dinner-time-title': "Hora de la Cena",
+        'dinner-time-text': "La cena será servida a las <strong>7:30 PM</strong>, seguida de música y baile.",
+        footer: "© 2025 Irvin & America"
+      }
+    };
 
-  <section id="galeria">
-    <h2>Galería</h2>
-    <p>Aquí nuestras fotos favoritas.</p>
-    <img src="IMG_0297.jpg" alt="Foto 1" width="300">
-    <img src="IMG_0406.jpg" alt="Foto 2" width="300">
-    <img src="IMG_2424.jpg" alt="Foto 3" width="300">
-    <img src="IMG_2942.jpg" alt="Foto 4" width="300">
-    <img src="IMG_9528.jpg" alt="Foto 5" width="300">
-  </section>
+    function changeLanguage(lang) {
+      Object.keys(translations[lang]).forEach(key => {
+        const el = document.getElementById(key);
+        if (el) el.innerHTML = translations[lang][key];
+      });
+    }
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Si tienes preguntas, contáctanos al correo: <strong>irvingarcia5395@gmail.com</strong></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Irvin & America. NosVamosACasar.co</p>
-  </footer>
+    // Detect based on browser language
+    const userLang = navigator.language.startsWith('en') ? 'en' : 'es';
+    changeLanguage(userLang);
+  </script>
 </body>
 </html>
