@@ -7,50 +7,50 @@
   <title>Irvin & America - ¡Nos Vamos a Casar!</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
- /* Corazones animados */
-    .heart {
-      width: 20px;
-      height: 20px;
-      position: fixed;
-      top: 100%;
-      background-color: #f48fb1; /* rosa cálido */
-      transform: rotate(45deg);
-      animation: floatUp 8s linear infinite;
-      opacity: 0.6;
-      z-index: -1;
-    }
+/* Fondo con corazones animados */
+.heart {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 100%;
+  background-color: pink;
+  transform: rotate(45deg);
+  animation: floatUp 8s linear infinite;
+  opacity: 0.7;
+  z-index: -1;
+}
 
-    .heart::before,
-    .heart::after {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background-color: #f48fb1; /* rosa cálido */
-      position: absolute;
-      border-radius: 50%;
-    }
+.heart::before,
+.heart::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: absolute;
+  border-radius: 50%;
+}
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
+.heart::before {
+  top: -10px;
+  left: 0;
+}
 
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
+.heart::after {
+  left: -10px;
+  top: 0;
+}
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) rotate(45deg);
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-120vh) rotate(45deg);
-        opacity: 0;
-      }
-    }
-  </style>
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+</style>
   </body>
     body { font-family: 'Playfair Display', serif; margin: 0; padding: 0; background: #fefaf5; color: #4a2e2b; }	
     header { background: #a35229; color: white; padding: 2rem; text-align: center; }
@@ -129,5 +129,17 @@
   <footer>
     <p>&copy; 2025 Irvin & America. NosVamosACasar.co</p>
   </footer>
+<!-- Corazones animados -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 8 + "s";
+      document.body.appendChild(heart);
+    }
+  });
+</script>
 </body>
 </html>
