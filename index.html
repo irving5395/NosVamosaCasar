@@ -7,6 +7,50 @@
   <title>Irvin & America - ¡Nos Vamos a Casar!</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
+ /* Corazones animados */
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: fixed;
+      top: 100%;
+      background-color: #f48fb1; /* rosa cálido */
+      transform: rotate(45deg);
+      animation: floatUp 8s linear infinite;
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: #f48fb1; /* rosa cálido */
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
   </body>
     body { font-family: 'Playfair Display', serif; margin: 0; padding: 0; background: #fefaf5; color: #4a2e2b; }	
     header { background: #a35229; color: white; padding: 2rem; text-align: center; }
@@ -54,7 +98,7 @@
       <p><strong>Hora</strong> 5:00 PM</p>
     Sera un honor contar con su presencia
     para celebrar juntos este nuevo comienzo</p>
-    <p><strong>Hora De La Cena</strong> La cena será servida con mucho amor, para compartir juntos este momento tan especial a las 6:30 PM</p>
+    <p><strong>Hora De La Cena</strong> La cena será servida con mucho amor, para compartir juntos este momento tan especial entre las 6:30 PM y las 7:30 PM</p>
   </section>
 
   <section id="rsvp">
