@@ -12,6 +12,7 @@
       padding: 0;
       background: #fefaf5;
       color: #4a2e2b;
+      overflow-x: hidden;
     }
     header {
       background: #a35229;
@@ -61,10 +62,58 @@
       font-size: 1rem;
       border-radius: 0.5rem;
     }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffb6b6;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffb6b6;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5) rotate(45deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <button id="language-toggle">EN</button>
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      heart.style.animationDuration = 10 + Math.random() * 10 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
   <header>
     <h1 data-es="Irvin & America" data-en="Irvin & America">Irvin & America</h1>
     <p data-es="¡Nos Vamos a Casar!" data-en="We're Getting Married!">¡Nos Vamos a Casar!</p>
