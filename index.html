@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="Español">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +61,34 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 0.5rem;
+      z-index: 1000;
+    }
+    #lang-hint {
+      position: fixed;
+      top: 3.5rem;
+      right: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      background-color: #fff4e6;
+      color: #a35229;
+      padding: 0.3rem 0.6rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      z-index: 999;
+      animation: fadeInHint 1s ease-in-out forwards;
+    }
+    .arrow-up {
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid #a35229;
+      margin-top: 4px;
+    }
+    @keyframes fadeInHint {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .heart {
       position: absolute;
@@ -69,6 +97,7 @@
       background-color: #ffb6b6;
       transform: rotate(45deg);
       animation: float 10s linear infinite;
+      z-index: 0;
     }
     .heart::before,
     .heart::after {
@@ -103,9 +132,13 @@
   </style>
 </head>
 <body>
-  <button id="language-toggle">EN</button>
+  <button id="language-toggle">ENGLISH</button>
+  <div id="lang-hint">
+    <span>🌐 Haz click aquí para Español or English </span>
+    <div class="arrow-up"></div>
+  </div>
   <script>
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + 'vw';
@@ -120,7 +153,7 @@
     <p data-es="09 de agosto del 2025 · 11:00 AM · Indianapolis, IN" data-en="August 9, 2025 · 11:00 AM · Indianapolis, IN">09 de agosto del 2025 · 11:00 AM · Indianapolis, IN</p>
   </header>
 
-  <section id="nuestra-historia">
+    <section id="nuestra-historia">
     <h2 data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</h2>
     <p data-es="Nuestra historia comenzó hace ya 14 años, en una fábrica donde ella entró a trabajar con una sonrisa enorme de cachete a cachete y un brillo en los ojos como el de una estrella."
        data-en="Our story began 14 years ago, in a factory where she started working with a huge smile from cheek to cheek and a sparkle in her eyes like a star.">Nuestra historia comenzó hace ya 14 años...</p>
