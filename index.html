@@ -85,14 +85,14 @@
 
   <section id="itinerario">
     <h2 data-es="Itinerario" data-en="Itinerary">Itinerario</h2>
-    <p data-es="<strong>Ceremonia a la 11:00 AM:</strong>" Holy Spirit Catholic Church" data-en="Ceremony at 11:00 AM: Holy Spirit Catholic Church">Ceremonia: Holy Spirit Catholic Church</p>
+    <p data-es="<strong>Ceremonia A Las 11:00 AM:</strong> Holy Spirit Catholic Church" data-en="<strong>Ceremony At 11:00 AM:</strong> Holy Spirit Catholic Church"><strong>Ceremonia A Las 11:00 AM:</strong> Holy Spirit Catholic Church</p>
     <p data-es="7243 E 10th St, Indianapolis, IN 46229" data-en="7243 E 10th St, Indianapolis, IN 46229">7243 E 10th St, Indianapolis, IN 46229</p>
-    <p data-es="Recepción a las 5:00 PM: Después de la ceremonia, queremos seguir compartiendo la alegría de este día tan especial con ustedes. Les invitamos a una hermosa velada con cena, música y baile, rodeados del cariño de nuestros seres queridos."
-       data-en="Reception at 5:00 PM : After the ceremony, we want to continue sharing the joy of this special day with you. We invite you to a beautiful evening with dinner, music, and dancing, surrounded by the love of our closest ones.">Recepción...</p>
-    <p data-es="Lugar: Blue Moon Events, 10202 E Washington St Ste.790, Indianapolis, IN 46229" data-en="Location: Blue Moon Events, 10202 E Washington St Ste.790, Indianapolis, IN 46229">Lugar...</p>
-    <p data-es="Hora: 5:00 PM" data-en="Time: 5:00 PM">Hora: 5:00 PM</p>
-    <p data-es="Hora De La Cena: La cena será servida con mucho amor, para compartir juntos este momento tan especial entre las 6:30 PM y las 7:30 PM"
-       data-en="Dinner Time: Dinner will be served with love, to enjoy this special moment together from 6:30 PM to 7:30 PM">Hora De La Cena...</p>
+    <p data-es="<strong>Recepción A Las 5:00 PM:</strong> Después de la ceremonia, queremos seguir compartiendo la alegría de este día tan especial con ustedes. Les invitamos a una hermosa velada con cena, música y baile, rodeados del cariño de nuestros seres queridos."
+       data-en="<strong>Reception at 5:00 PM:</strong> After the ceremony, we want to continue sharing the joy of this special day with you. We invite you to a beautiful evening with dinner, music, and dancing, surrounded by the love of our closest ones."><strong>Recepción:</strong> Después de la ceremonia...</p>
+    <p data-es="<strong>Lugar:</strong> Blue Moon Events, 10202 E Washington St Ste.790, Indianapolis, IN 46229" data-en="<strong>Location:</strong> Blue Moon Events, 10202 E Washington St Ste.790, Indianapolis, IN 46229"><strong>Lugar:</strong> Blue Moon Events...</p>
+    <p data-es="<strong>Hora:</strong> 5:00 PM" data-en="<strong>Time:</strong> 5:00 PM"><strong>Hora:</strong> 5:00 PM</p>
+    <p data-es="<strong>Hora De La Cena:</strong> La cena será servida con mucho amor, para compartir juntos este momento tan especial entre las 6:30 PM y las 7:30 PM"
+       data-en="<strong>Dinner Time:</strong> Dinner will be served with love, to enjoy this special moment together from 6:30 PM to 7:30 PM"><strong>Hora De La Cena:</strong> La cena será servida...</p>
   </section>
 
   <section id="rsvp">
@@ -132,7 +132,7 @@
     toggleBtn.addEventListener('click', () => {
       currentLang = currentLang === 'es' ? 'en' : 'es';
       document.querySelectorAll('[data-es]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
+        el.innerHTML = el.getAttribute(`data-${currentLang}`);
       });
       toggleBtn.textContent = currentLang.toUpperCase() === 'ES' ? 'EN' : 'ES';
     });
